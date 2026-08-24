@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg-color: #050507;
+  --panel-bg: rgba(18, 18, 22, 0.75);
+  --accent-gold: #d4af37;
+  --accent-gold-glow: rgba(212, 175, 55, 0.25);
+  --border-gold: rgba(212, 175, 55, 0.3);
+  --text-primary: #f0f0f5;
+  --text-muted: #8e8e9e;
+  --font-title: 'Cinzel', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  background-image: 
+    radial-gradient(circle at 50% 15%, rgba(212, 175, 55, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 50% 85%, rgba(40, 20, 70, 0.15) 0%, transparent 70%);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 20px;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Header & Botoes de Modo */
+header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+header h1 {
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #ffffff 30%, var(--accent-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+  text-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+}
+
+header p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.mode-selector {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.mode-btn {
+  background: transparent;
+  border: 1px solid var(--border-gold);
+  color: var(--text-muted);
+  padding: 8px 20px;
+  font-family: var(--font-title);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mode-btn:hover {
+  border-color: var(--accent-gold);
+  color: var(--text-primary);
+}
+
+.mode-btn.active {
+  background: var(--accent-gold);
+  color: #050507;
+  border-color: var(--accent-gold);
+  font-weight: 700;
+  box-shadow: 0 0 15px var(--accent-gold-glow);
+}
+
+/* Área das Cartas */
+.table-area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-grow: 1;
+  margin: 20px 0;
+}
+
+.selected-cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 25px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.card-slot {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: cardAppear 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Ajustes de tamanho no modo único */
+.mode-single .card-slot {
+  max-width: 420px;
+}
+
+.card {
+  width: 200px;
+  height: 340px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.15, 0.85, 0.35, 1.2);
+  cursor: pointer;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  border: 1px solid var(--border-gold);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 15px var(--accent-gold-glow);
+  overflow: hidden;
+  background-color: #0c0c10;
+}
+
+.card-back {
+  background-image: url('assets/verso.png');
+  background-size: cover;
+  background-position: center;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover .card-back {
+  border-color: var(--accent-gold);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 25px rgba(212, 175, 55, 0.4);
+}
+
+.card-front {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Card Description */
+.card-description {
+  margin-top: 20px;
+  width: 100%;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  text-align: left;
+  background: var(--panel-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border-gold);
+  color: #d8d8e5;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.card-description strong {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  color: var(--accent-gold);
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Painel da Síntese das 3 Cartas */
+.synthesis-panel {
+  width: 100%;
+  max-width: 900px;
+  margin: 10px 0 30px 0;
+  background: rgba(20, 16, 28, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--accent-gold);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 0 35px rgba(212, 175, 55, 0.15);
+  animation: cardAppear 0.7s ease forwards;
+}
+
+.synthesis-panel h3 {
+  font-family: var(--font-title);
+  color: var(--accent-gold);
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.synthesis-panel p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #e2e2ec;
+  text-align: justify;
+}
+
+/* Deck */
+.deck-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.deck {
+  position: relative;
+  width: 110px;
+  height: 170px;
+  cursor: pointer;
+}
+
+.deck-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border-gold);
+  background-image: url('assets/verso.png');
+  background-size: cover;
+  background-position: center;
+  background-color: #0c0c10;
+  box-shadow: -2px 4px 12px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.deck:hover .deck-card {
+  border-color: var(--accent-gold);
+}
+
+.deck:hover .deck-card:nth-child(10) {
+  transform: translateY(-8px) scale(1.03);
+}
+
+.deck-hint {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .selected-cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card-slot {
+    max-width: 100%;
+  }
+}

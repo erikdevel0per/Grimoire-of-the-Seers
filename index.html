@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oráculo Beyonder - Leitura de Tarô</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Grimório dos Videntes</h1>
+      <p>Revele a cicatriz do Passado, o peso da Corrente do Presente e a sombra do Destino Inevitável...</p>
+      
+      <!-- Seletor de Modo -->
+      <div class="mode-selector">
+        <button id="modeSingleBtn" class="mode-btn active" onclick="switchMode('single')">Carta Única</button>
+        <button id="modeTripleBtn" class="mode-btn" onclick="switchMode('triple')">Três Cartas</button>
+      </div>
+    </header>
+
+    <main class="table-area">
+      <div class="selected-cards-container" id="selectedContainer"></div>
+    </main>
+
+    <!-- Painel de Síntese para o Modo Triplo -->
+    <div id="tripleSynthesis" class="synthesis-panel" style="display: none;"></div>
+
+    <section class="deck-container">
+      <div class="deck" id="deck"></div>
+      <span class="deck-hint" id="deckHint">Clique no monte para tirar uma carta</span>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
