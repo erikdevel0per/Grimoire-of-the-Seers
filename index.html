@@ -8,12 +8,45 @@
 </head>
 <body>
 
+  <!-- Modal de Recepção do Usuário -->
+  <div id="introModal" class="modal-overlay">
+    <div class="modal-content">
+      
+      <!-- Passo 1: Nome -->
+      <div id="step1" class="modal-step active">
+        <h2>Saudações, Caminhante</h2>
+        <p>Antes de revelar o véu do destino, como o Oráculo deve lhe chamar?</p>
+        <input type="text" id="inputName" placeholder="Seu nome ou alcunha..." autocomplete="off">
+        <button class="modal-btn" onclick="nextStep(1)">Avançar</button>
+      </div>
+
+      <!-- Passo 2: Motivo da Consulta -->
+      <div id="step2" class="modal-step">
+        <h2>A Busca pelo Destino</h2>
+        <p>O que lhe traz à presença do Oráculo hoje?</p>
+        <input type="text" id="inputReason" placeholder="Digite aqui.."off">
+        <button class="modal-btn" onclick="nextStep(2)">Avançar</button>
+      </div>
+
+      <!-- Passo 3: Comentários/Dúvidas Finais -->
+      <div id="step3" class="modal-step">
+        <h2>Avisos ao Abismo</h2>
+        <p>Há algo que gostaria de comentar ou esclarecer antes de iniciar a tiragem?</p>
+        <textarea id="inputComments" placeholder="Escreva aqui suas intenções ou dúvidas (opcional)..." rows="3"></textarea>
+        <button class="modal-btn" onclick="finishIntro()">Iniciar Tiragem</button>
+      </div>
+
+    </div>
+  </div>
+
   <div class="container">
     <header>
+      <!-- Saudação personalizada gerada via JS -->
+      <div id="userWelcome" class="user-welcome"></div>
+
       <h1>Grimório dos Videntes</h1>
       <p>Revele a cicatriz do Passado, o peso da Corrente do Presente e a sombra do Destino Inevitável...</p>
       
-      <!-- Seletor de Modo -->
       <div class="mode-selector">
         <button id="modeSingleBtn" class="mode-btn active" onclick="switchMode('single')">Carta Única</button>
         <button id="modeTripleBtn" class="mode-btn" onclick="switchMode('triple')">Três Cartas</button>
@@ -24,7 +57,6 @@
       <div class="selected-cards-container" id="selectedContainer"></div>
     </main>
 
-    <!-- Painel de Síntese para o Modo Triplo -->
     <div id="tripleSynthesis" class="synthesis-panel" style="display: none;"></div>
 
     <section class="deck-container">
