@@ -1,4 +1,4 @@
-# Leitura de Tarô
+# Grimório dos Videntes
 
 Uma aplicação web interativa e mística inspirada nos Caminhos de *Lord of the Mysteries*. O Oráculo permite realizar leituras de tarô em dois modos distintos, fornecendo interpretações individuais e leituras compostas sobre os caminhos do destino.
 
@@ -29,7 +29,33 @@ O **Oráculo Beyonder** é uma interface desenvolvida em HTML5, CSS3 e JavaScrip
 
 ### 1. Estrutura de Arquivos
 
-```text
-├── index.html        # Estrutura principal e seletores
-├── styles.css        # Estilização mística e animações
-└── script.js        # Lógica do baralho, modos e síntese
+Grimoire of th.../
+├── assets/                  # Pasta para arquivos de mídia/recursos estáticos
+│   ├── cards/              # Subpasta contendo as imagens das cartas
+│   │   ├── carta-1.png     # Imagem da carta 1
+│   │   ├── carta-2.png     # Imagem da carta 2
+│   │   ├── carta-3.png     # Imagem da carta 3
+│   │   ├── carta-4.png     # Imagem da carta 4
+│   │   ├── carta-5.png     # Imagem da carta 5
+│   │   ├── carta-6.png     # Imagem da carta 6
+│   │   ├── carta-7.png     # Imagem da carta 7
+│   │   ├── carta-8.png     # Imagem da carta 8
+│   │   ├── carta-9.png     # Imagem da carta 9
+│   │   ├── carta-10.png    # Imagem da carta 10
+│   │   ├── carta-11.png    # Imagem da carta 11
+│   │   ├── carta-12.png    # Imagem da carta 12
+│   │   ├── carta-13.png    # Imagem da carta 13
+│   │   ├── carta-14.png    # Imagem da carta 14
+│   │   ├── carta-15.png    # Imagem da carta 15
+│   │   ├── carta-16.png    # Imagem da carta 16
+│   │   ├── carta-17.png    # Imagem da carta 17
+│   │   ├── carta-18.png    # Imagem da carta 18
+│   │   ├── carta-19.png    # Imagem da carta 19
+│   │   ├── carta-20.png    # Imagem da carta 20
+│   │   ├── carta-21.png    # Imagem da carta 21
+│   │   └── carta-22.png    # Imagem da carta 22
+│   └── verso.png           # Imagem do verso padrão de todas as cartas
+├── index.html              # Arquivo HTML principal (estrutura da página)
+├── readme.md               # Documentação explicativa do projeto
+├── script.js               # Arquivo JavaScript (lógica do projeto/jogo)
+└── styles.css              # Arquivo de estilos CSS (visual e layout)
