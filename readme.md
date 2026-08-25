@@ -29,33 +29,34 @@ O **Oráculo Beyonder** é uma interface desenvolvida em HTML5, CSS3 e JavaScrip
 
 ### 1. Estrutura de Arquivos
 
-Grimoire of th.../
-├── assets/                  # Pasta para arquivos de mídia/recursos estáticos
-│   ├── cards/              # Subpasta contendo as imagens das cartas
-│   │   ├── carta-1.png     # Imagem da carta 1
-│   │   ├── carta-2.png     # Imagem da carta 2
-│   │   ├── carta-3.png     # Imagem da carta 3
-│   │   ├── carta-4.png     # Imagem da carta 4
-│   │   ├── carta-5.png     # Imagem da carta 5
-│   │   ├── carta-6.png     # Imagem da carta 6
-│   │   ├── carta-7.png     # Imagem da carta 7
-│   │   ├── carta-8.png     # Imagem da carta 8
-│   │   ├── carta-9.png     # Imagem da carta 9
-│   │   ├── carta-10.png    # Imagem da carta 10
-│   │   ├── carta-11.png    # Imagem da carta 11
-│   │   ├── carta-12.png    # Imagem da carta 12
-│   │   ├── carta-13.png    # Imagem da carta 13
-│   │   ├── carta-14.png    # Imagem da carta 14
-│   │   ├── carta-15.png    # Imagem da carta 15
-│   │   ├── carta-16.png    # Imagem da carta 16
-│   │   ├── carta-17.png    # Imagem da carta 17
-│   │   ├── carta-18.png    # Imagem da carta 18
-│   │   ├── carta-19.png    # Imagem da carta 19
-│   │   ├── carta-20.png    # Imagem da carta 20
-│   │   ├── carta-21.png    # Imagem da carta 21
-│   │   └── carta-22.png    # Imagem da carta 22
-│   └── verso.png           # Imagem do verso padrão de todas as cartas
-├── index.html              # Arquivo HTML principal (estrutura da página)
-├── readme.md               # Documentação explicativa do projeto
-├── script.js               # Arquivo JavaScript (lógica do projeto/jogo)
-└── styles.css              # Arquivo de estilos CSS (visual e layout)
+```text
+Grimoire of the Seers/
+├── assets/                  # Arquivos de mídia e recursos estáticos
+│   ├── cards/               # Ilustrações das cartas de Tarô
+│   │   ├── carta-1.png      # O Tolo
+│   │   ├── carta-2.png      # O Mágico
+│   │   ├── carta-3.png      # A Alta Sacerdotisa
+│   │   ├── carta-4.png      # A Imperatriz
+│   │   ├── carta-5.png      # O Imperador
+│   │   ├── carta-6.png      # O Hierofante
+│   │   ├── carta-7.png      # Os Amantes
+│   │   ├── carta-8.png      # O Carro
+│   │   ├── carta-9.png      # A Força
+│   │   ├── carta-10.png     # O Eremita
+│   │   ├── carta-11.png     # A Roda da Fortuna
+│   │   ├── carta-12.png     # A Justiça
+│   │   ├── carta-13.png     # O Enforcado
+│   │   ├── carta-14.png     # A Morte
+│   │   ├── carta-15.png     # A Temperança
+│   │   ├── carta-16.png     # O Demônio
+│   │   ├── carta-17.png     # A Torre
+│   │   ├── carta-18.png     # A Estrela
+│   │   ├── carta-19.png     # A Lua
+│   │   ├── carta-20.png     # O Sol
+│   │   ├── carta-21.png     # O Julgamento
+│   │   └── carta-22.png     # O Mundo
+│   └── verso.png            # Verso padrão utilizado para todas as cartas
+├── index.html               # Estrutura principal da aplicação
+├── script.js                # Lógica da tiragem, manipulação de estado e banco de dados
+├── styles.css               # Estilização, temas e animações
+└── README.md                # Documentação do projeto
